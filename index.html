@@ -141,6 +141,127 @@
       }
     }
 
+    /* Sezione Card Vantaggi - versione premium */
+.card-vantaggi {
+  background: radial-gradient(circle at 10% 20%, rgba(30,30,35,1) 0%, rgba(10,10,12,1) 90%);
+  border-top: 1px solid var(--border, #2c2c2c);
+  border-bottom: 1px solid var(--border, #2c2c2c);
+}
+
+.partner-grid.premium {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin: 32px 0 16px;
+}
+
+.premium-card {
+  background: rgba(20,20,25,0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 32px;
+  padding: 28px 20px 24px;
+  text-align: center;
+  border: 1px solid rgba(230,48,38,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--red, #e63026);
+  box-shadow: 0 20px 30px -12px rgba(230,48,38,0.2);
+}
+
+.premium-card .partner-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.premium-card .partner-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  background: linear-gradient(135deg, #fff 0%, #ccc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+}
+
+.premium-code {
+  font-family: 'Courier New', monospace;
+  background: #1a1a1f;
+  padding: 6px 12px;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin: 12px 0 8px;
+  letter-spacing: 0.5px;
+  color: #e63026;
+  border: 1px solid rgba(230,48,38,0.3);
+}
+
+.partner-desc {
+  color: var(--muted, #aaa);
+  line-height: 1.45;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(230,48,38,0.15);
+  backdrop-filter: blur(4px);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 40px;
+  letter-spacing: 0.5px;
+  color: #e63026;
+  border: 0.5px solid rgba(230,48,38,0.4);
+}
+
+.hashtag-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hashtag-strip span {
+  background: rgba(230,48,38,0.12);
+  padding: 6px 14px;
+  border-radius: 60px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--red, #e63026);
+  letter-spacing: -0.2px;
+  transition: 0.2s;
+}
+
+.hashtag-strip span:hover {
+  background: rgba(230,48,38,0.25);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .premium-card .partner-name {
+    font-size: 1.3rem;
+  }
+  .card-badge {
+    position: static;
+    display: inline-block;
+    margin-top: 12px;
+  }
+}
+
 
   </style>
 
@@ -597,47 +718,66 @@
 
 
 <!-- ═══════════════════════════════════════════════════════
-     CARD VANTAGGI (Conosci tutti i vantaggi della nostra card?)
+     CARD VANTAGGI (versione premium)
 ════════════════════════════════════════════════════════ -->
 <section id="card-vantaggi" class="sec card-vantaggi" aria-labelledby="card-title">
-
   <div class="sec-inner">
-    <div class="reveal" style="text-align:center; max-width:800px; margin:0 auto;">
+    <div class="reveal" style="text-align:center; max-width:800px; margin:0 auto 48px;">
       <h2 id="card-title" class="sec-h2">Conosci tutti i vantaggi<br>della nostra <span class="red">Card</span>?</h2>
-      <p class="vantaggi-intro">
-        La nostra tessera non è solo il tuo pass per entrare in palestra...<br>
-        È anche la chiave per accedere a una serie di sconti e vantaggi esclusivi nei negozi e locali partner! 🔥
+      <p class="vantaggi-intro" style="font-size:1.2rem; color:var(--muted);">
+        La nostra tessera non è solo il tuo pass per entrare in palestra…<br>
+        È anche la chiave per accedere a sconti e vantaggi esclusivi nei negozi e locali partner! 🔥
       </p>
     </div>
-  <!-- Immagine della Card Ares Gym -->
-    <div class="card-img-wrapper reveal" style="max-width: 600px; margin: 48px auto 0; border-radius: 28px; overflow: hidden; border: 1px solid rgba(230,48,38,0.3);">
-      <img src="assets/img/card.jpg" alt="Ares Card - Vantaggi esclusivi" style="width:100%; height:auto; display:block;">
-    </div>
-    <div class="partner-grid reveal">
-      <div class="partner-card">
+
+    <div class="partner-grid premium">
+      <!-- CISALFA SPORT -->
+      <div class="partner-card premium-card reveal">
         <div class="partner-icon">🏋️‍♂️</div>
         <div class="partner-name">CISALFA SPORT</div>
-        <div class="partner-code">Codice affiliato: PRO6606257114</div>
+        <div class="partner-code premium-code">PRO6606257114</div>
         <div class="partner-desc">Sconti esclusivi con il livello Top Player</div>
+        <div class="card-badge">Codice affiliato</div>
       </div>
-      <div class="partner-card">
+
+      <!-- PROZIS.IT -->
+      <div class="partner-card premium-card reveal">
         <div class="partner-icon">🛒</div>
         <div class="partner-name">PROZIS.IT</div>
-        <div class="partner-code">Codice promo: ARESGYM22</div>
+        <div class="partner-code premium-code">ARESGYM22</div>
         <div class="partner-desc">-10% su tutti i prodotti!</div>
+        <div class="card-badge">Codice promo</div>
       </div>
-      <div class="partner-card">
+
+      <!-- GETher -->
+      <div class="partner-card premium-card reveal">
         <div class="partner-icon">🍦</div>
-        <div class="partner-name">GETher – Lungo Mare Schiavonea</div>
+        <div class="partner-name">GETher</div>
+        <div class="partner-desc" style="font-size:0.9rem;">Lungo Mare Schiavonea</div>
         <div class="partner-desc">Mostra la tessera alla cassa e riceverai uno sconto!</div>
+        <div class="card-badge">Sconto in negozio</div>
       </div>
-      <div class="partner-card">
+
+      <!-- WAAPA -->
+      <div class="partner-card premium-card reveal">
         <div class="partner-icon">🌴</div>
-        <div class="partner-name">WAAPA – Corigliano Scalo & Rossano</div>
+        <div class="partner-name">WAAPA</div>
+        <div class="partner-desc" style="font-size:0.9rem;">Corigliano Scalo & Rossano</div>
         <div class="partner-desc">Presenta la tessera e iscriviti alla fidelity per ricevere vantaggi e sconti speciali</div>
+        <div class="card-badge">Fidelity partner</div>
       </div>
     </div>
+
+    <div class="reveal" style="text-align:center; margin-top: 48px;">
+      <p style="font-size:1.2rem; font-weight:500;">💪 Allenati, risparmia e vivi l’esperienza Ares al massimo</p>
+
     </div>
+
+    <!-- Immagine della card (se presente) -->
+    <div class="card-img-wrapper reveal" style="max-width: 500px; margin: 48px auto 0; border-radius: 28px; overflow: hidden; border: 1px solid rgba(230,48,38,0.4); box-shadow: 0 20px 35px -10px rgba(0,0,0,0.4);">
+      <img src="assets/img/card.jpg" alt="Ares Card - Vantaggi esclusivi" style="width:100%; height:auto; display:block;">
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
